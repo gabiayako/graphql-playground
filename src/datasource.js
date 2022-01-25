@@ -1,9 +1,9 @@
-const { RESTDataSource } = require('apollo-datasource-rest');
+const { RESTDataSource } = require("apollo-datasource-rest");
 
 class GithubApi extends RESTDataSource {
   constructor() {
     super();
-    this.baseURL = 'https://api.github.com/';
+    this.baseURL = "https://api.github.com/";
   }
 
   async getUserDataByUsername(username) {
@@ -17,6 +17,7 @@ class GithubApi extends RESTDataSource {
       username: user.login,
       name: user.name,
       avatar: user.avatar_url,
+      repos: user.repos_url,
     };
   }
 
